@@ -1,13 +1,13 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyD21bp1h-zftrac0rcUT__qtHMqVZP2I-M",
-    authDomain: "kwittwer-1495e.firebaseapp.com",
-    projectId: "kwittwer-1495e",
-    storageBucket: "kwittwer-1495e.appspot.com",
-    messagingSenderId: "277418564759",
-    appId: "1:277418564759:web:6686895c48b428950c9dd2",
-    measurementId: "G-SKJCKB48R2"
-  };
-  const app = initializeApp(firebaseConfig);
+  apiKey: "AIzaSyBZtL8D2YET9L3aVgfhMoymeBA82PBSIm0",
+  authDomain: "let-s-chat-88eb0.firebaseapp.com",
+  projectId: "let-s-chat-88eb0",
+  storageBucket: "let-s-chat-88eb0.appspot.com",
+  messagingSenderId: "294325221280",
+  appId: "1:294325221280:web:693ac765d9b946273b56c5",
+};
+
+firebase.initializeApp(firebaseConfig);
 
 function getData() {firebase.database().ref("/").on('value', function(snapshot) {document.getElementById("output").innerHTML = "";snapshot.forEach(function(childSnapshot) {childKey  = childSnapshot.key;
      Room_names = childKey;
@@ -19,3 +19,10 @@ function addroom(){
     localStorage.setItem("room_name", room_name);
     
 }
+function logout(){
+  window.location= "index.html";
+  localStorage.removeItem("room_name");
+  localStorage.removeItem("username");
+
+}
+
